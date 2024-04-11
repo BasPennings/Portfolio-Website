@@ -1,1 +1,83 @@
 /* Make use of lang to switch between language */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --language-selector-width: 55px; /* Individual language container width*/
+    --language-selector-height: auto;
+    --language-selector-border-radius: 4px;
+    --language-selector-border: purple;
+    --language-selector-hover: blue;
+    --language-selector-checked: red;
+    --language-selector-focus: orange;
+}
+
+/* Language Selector */
+nav #language-selector {
+  width: var(--language-selector-width) * 2;
+  height: var(--language-selector-height);
+  font-size: 14px;
+  line-height: 1;
+  margin: 1em 0;
+}
+
+nav #language-selector div {
+  position: relative;
+  float: left;
+  width: var(--language-selector-width);
+  height: var(--language-selector-height);
+  padding: 5px;
+}
+
+nav label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--language-selector-width);
+  height: var(--language-selector-height);
+  border: 1px solid var(--language-selector-border);
+  padding: 7px 8px 5px 0;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 7px 7px;
+  background-size: 14px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+nav #language-container-left label {
+  border-radius:
+    var(--language-selector-border-radius)
+    0
+    0
+    var(--language-selector-border-radius);
+}
+
+nav #language-container-right label {
+  border-left: 0;
+  border-radius:
+    0
+    var(--language-selector-border-radius)
+    var(--language-selector-border-radius)
+    0;
+}
+
+nav input:hover + label,
+nav input:focus + label {
+  background-color: var(--language-selector-hover);
+}
+
+nav input:checked + label {
+  background-color: var(--language-selector-checked);
+}
+
+nav #language-container-left label {
+  background-image: url('assets/nlFlag.svg');
+}
+
+nav #language-container-right label {
+  background-image: url('assets/enFlag.svg');
+}
